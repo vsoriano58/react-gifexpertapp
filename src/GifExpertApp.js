@@ -1,19 +1,14 @@
 import React, {useState} from 'react'
 import { AddCategory } from './components/AddCategory'
+import GifGrid from './components/GifGrid'
 
 export const GifExpertApp = () => {
 
     // No utilizaremos esta línea por los problemas ampliar los elementos y que React reacione
     //const categories = ['one Punch', 'Sanurai X', 'Dragon Ball']
 
-    const [categories, setCategories] = useState(['one Punch', 'Sanurai X', 'Dragon Ball'])
+    const [categories, setCategories] = useState(['One Punch'])
 
-    // const handleAdd = ()=> {
-       
-    //     // setCategories = () =>
-    //     // Otra solución sería
-    //     setCategories( cats => [...cats, 'HunterXHunter'])
-    // }
 
     return (
 
@@ -27,10 +22,14 @@ export const GifExpertApp = () => {
            <ol>
 
                 {
-                    categories.map( category => {
-                            return <li key={category}> { category }</li>
+                    categories.map( category => (
+                           
+                        <GifGrid
+                            key={ category }
+                            category={category}
+                        />
 
-                    })
+                    ))
                 }       
 
            </ol> 
